@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function operation(opr) {
+            var ip1 = parseInt(document.getElementById("input1").value);
+            var ip2 = parseInt(document.getElementById("input2").value);
+            var output;
+            switch (opr) {
+                case '+':
+                    output = ip1 + ip2;
+                    break;
+                case '-':
+                    output = ip1 - ip2;
+                    break;
+                case '*':
+                    output = ip1 * ip2;
+                    break;
+                case '/':
+                    if (ip2 != 0) {
+                        output = ip1 / ip2;
+                    } else {
+                        document.getElementById("output").innerHTML = "Divide By Zero Error";
+                        return;
+                    }
+                    break;
+            }
+            document.getElementById("output").innerHTML = "Result: " + output;
+        }
+    </script>
+</head>
+
+<body>
+    <label for="input1">Input 1: </label>
+    <input type="number" id="input1"></input> &emsp;
+    <label for="input2">Input 2: </label>
+    <input type="number" id="input2"></input> <br>
+
+    <button onclick=operation('+')>Add</button>
+    <button onclick=operation('-')>Subtract</button>
+    <button onclick=operation('*')>Multiply</button>
+    <button onclick=operation('/')>Divide </button> <br>
+
+        <p id="output"></p>
+
+</body>
+
+</html>
