@@ -1,0 +1,61 @@
+<!--
+3. Write a JavaScript code that displays text “TEXT-GROWING” with increasing font
+cur_size in the interval of 100ms in RED COLOR, when the font cur_size reaches 50pt it
+displays “TEXT-SHRINKING” in BLUE color. Then the font cur_size decreases to 5pt.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>3rd Lab Program</title>
+    <style>
+        #ele {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <p id="ele"></p>
+    <script>
+        let ele = document.getElementById("ele");
+        var cur_size = 5;
+        var increasing = true;
+
+        var lower_bound = 5;
+        var upper_bound = 50;
+        var step_size = 5;
+        var time_interval = 100;
+
+        setInterval(function () {
+            if (cur_size <= lower_bound) {
+                increasing = true;
+                ele.style.color = "red";
+                cur_size = lower_bound + step_size;
+                ele.style.fontSize = cur_size + "pt";
+                ele.innerHTML = "Growing Text";
+
+            } else if (cur_size >= upper_bound) {
+                increasing = false;
+                ele.style.color = "blue";
+                cur_size = upper_bound - step_size;
+                ele.style.fontSize = cur_size + "pt";
+
+                ele.innerHTML = "Shrinking Text";
+            } else {
+                if (increasing) {
+                    cur_size = cur_size + step_size;
+                } else {
+                    cur_size = cur_size - step_size;
+                }
+                ele.style.fontSize = cur_size + "pt";
+            }
+        }, time_interval);
+    </script>
+</body>
+
+</html>
