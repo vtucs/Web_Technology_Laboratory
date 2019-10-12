@@ -1,0 +1,55 @@
+<!--
+4. Develop and demonstrate a HTML5 file that includes JavaScript script that uses
+functions for the following problems:
+a. Parameter: A string
+b. Output: The position in the string of the left-most vowel
+c. Parameter: A number
+d. Output: The number with its digits in the reverse order
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>4th Lab Program</title>
+</head>
+
+<body>
+    <input type="text" id="input"><br>
+    <button type="submit" onclick="action()">Submit</button>
+    <p id="result"></p>
+    <script>
+        function action() {
+            var input = document.getElementById("input").value;
+            var par = document.getElementById("result");
+            if (isNaN(input)) {
+                let index = leftMostVowelIndex(input);
+                if (index != -1) {
+                    par.innerHTML = "Position: " + (index + 1);
+                } else {
+                    par.innerHTML = "No Vowel Found";
+                }
+            } else {
+                par.innerHTML = reverseNumber(input);
+            }
+        }
+
+        function leftMostVowelIndex(input) {
+            input = input.toLowerCase();
+            for (var i = 0; i < input.length; i++) {
+                if (input[i] == 'a' || input[i] == 'e' || input[i] == 'i' || input[i] == 'o' || input[i] == 'u') {
+                    return i;
+                }
+            }
+            return -1; // No Vowel Found
+        }
+
+        function reverseNumber(input) {
+            return input.split("").reverse().join("");
+        }
+
+    </script>
+
+</body>
+
+</html>
