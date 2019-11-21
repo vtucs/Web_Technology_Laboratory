@@ -7,6 +7,7 @@ d. Addition of two matrices.
 -->
 
 <!DOCTYPE html>
+<html>
 <head>
     <title>Simple Calculator</title>
 </head>
