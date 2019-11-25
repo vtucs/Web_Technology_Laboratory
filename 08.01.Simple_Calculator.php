@@ -29,7 +29,7 @@ d. Addition of two matrices.
 if (isset($_POST['num1']) and isset($_POST['num2'])) {
     $num1 = $_POST['num1'];
     $num2 = $_POST['num2'];
-    if (is_numeric($num1) and is_numeric($num1)) {
+    if (is_numeric($num1) and is_numeric($num2)) {
         echo "<table>";
         echo "<tr><td> Addition: </td><td>" . ($num1 + $num2) . "</td>";
         echo "<tr><td> Subtraction: </td><td>" . ($num1 - $num2) . "</td>";
