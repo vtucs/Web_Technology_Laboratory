@@ -10,6 +10,6 @@ student {
     margin: 50px;
 }
 
-name, age, usn, branch, college, year {
+name, email, usn, branch, college, year {
     display: block;
 }
