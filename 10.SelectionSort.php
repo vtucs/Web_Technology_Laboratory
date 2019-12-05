@@ -5,9 +5,6 @@ using selection sort.
 
 <!DOCTYPE html>
 <html>
-<head>
-
-</head>
 <body>
 
 <?php
