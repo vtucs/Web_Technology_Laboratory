@@ -50,7 +50,7 @@ if (($m === $p) and ($n === $q)) {
     $add = array();
     echo "The Addition of Matrices is:" . "<br/>";
     for ($i = 0; $i < $m; $i++) {
-        for ($j = 0; $j < $p; $j++)
+        for ($j = 0; $j < $n; $j++)
             $add[$i][$j] = $a[$i][$j] + $b[$i][$j];
     }
     print_matrix($add);
